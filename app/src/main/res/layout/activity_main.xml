@@ -4,42 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="@drawable/login_background"
     tools:context=".MainActivity">
 
     <!-- Logo do aplicativo -->
     <ImageView
         android:id="@+id/logoImageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="295dp"
+        android:layout_height="250dp"
         android:layout_marginTop="80dp"
-        android:src="@drawable/ic_eco_logo"
+        android:contentDescription="@string/app_logo_description"
+        android:src="@drawable/eco_energy_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/app_logo_description" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Nome do aplicativo -->
-    <TextView
-        android:id="@+id/appNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EcoEnergy"
-        android:textColor="@android:color/white"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
-
-    <!-- Título da tela -->
+    <!-- Título da tela (cor alterada para verde) -->
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="Acesse sua conta"
-        android:textColor="@android:color/white"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/emailButton"
@@ -47,37 +34,37 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Botão para continuar com Email -->
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/emailButton"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/button_background_white"
+        android:background="@drawable/button_background_orange"
         android:text="Continue com Email"
         android:textAllCaps="false"
-        android:textColor="#4CAF50"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/gmailButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Botão para continuar com Gmail -->
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/gmailButton"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="80dp"
-        android:background="@drawable/button_background_outline"
+        android:background="@drawable/button_background_orange_outline"
         android:drawableLeft="@drawable/ic_google_logo"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="Continue com Gmail"
         android:textAllCaps="false"
-        android:textColor="@android:color/white"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/signUpTextView"
         app:layout_constraintEnd_toEndOf="parent"
