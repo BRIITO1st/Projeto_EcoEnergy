@@ -27,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
         emailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Botão 'Continue com Email' clicado", Toast.LENGTH_SHORT).show();
-                // TODO: Navegar para a tela de login com email
+                // Abre tela de Login com Email
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 

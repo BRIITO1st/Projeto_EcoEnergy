@@ -1,5 +1,5 @@
-<!-- res/drawable/button_background_orange.xml -->
+<!-- res/drawable/button_background_purple.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="#47DEAA"/>
-    <corners android:radius="30dp"/>
+    <corners android:radius="15dp"/>
 </shape>
