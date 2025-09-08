@@ -7,21 +7,24 @@
     android:background="@android:color/white"
     tools:context=".RegisterActivity">
 
-    <!-- Forma verde no topo -->
+    <!-- Fundo verde do cabeçalho -->
     <View
-        android:id="@+id/topShape"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:id="@+id/header_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/register_top_shape"
+        app:layout_constraintDimensionRatio="1:0.7"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Título "SignUp" -->
     <TextView
-        android:id="@+id/titleTextView"
+        android:id="@+id/textViewSignUpTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
         android:text="SignUp"
         android:textColor="@android:color/white"
         android:textSize="48sp"
@@ -29,117 +32,117 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Campos de texto -->
+    <!-- Campo de Nome -->
     <TextView
-        android:id="@+id/nameLabel"
+        android:id="@+id/textViewNameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
-        android:text="Nome"
-        android:textColor="#000000"
+        android:layout_marginTop="40dp"
+        android:text="Name"
+        android:textColor="#333333"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topShape" />
+        app:layout_constraintTop_toBottomOf="@id/header_background" />
 
     <EditText
-        android:id="@+id/nameEditText"
+        android:id="@+id/editTextName"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/edit_text_background_green_border"
-        android:hint="Insira seu nome aqui"
+        android:background="@drawable/edit_text_background_green_stroke"
+        android:hint="Seu Nome"
         android:inputType="textPersonName"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
+        app:layout_constraintTop_toBottomOf="@id/textViewNameLabel" />
 
+    <!-- Campo de Email -->
     <TextView
-        android:id="@+id/emailLabel"
+        android:id="@+id/textViewEmailLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:text="Email"
-        android:textColor="#000000"
+        android:textColor="#333333"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameEditText" />
+        app:layout_constraintTop_toBottomOf="@id/editTextName" />
 
     <EditText
-        android:id="@+id/emailEditText"
+        android:id="@+id/editTextEmail"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/edit_text_background_green_border"
-        android:hint="exemplo@gmail.com"
+        android:background="@drawable/edit_text_background_green_stroke"
+        android:hint="seuemail@exemplo.com"
         android:inputType="textEmailAddress"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailLabel" />
+        app:layout_constraintTop_toBottomOf="@id/textViewEmailLabel" />
 
+    <!-- Campo de Senha -->
     <TextView
-        android:id="@+id/passwordLabel"
+        android:id="@+id/textViewPasswordLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:text="Senha"
-        android:textColor="#000000"
+        android:text="Password"
+        android:textColor="#333333"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/emailEditText" />
+        app:layout_constraintTop_toBottomOf="@id/editTextEmail" />
 
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/editTextPassword"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/edit_text_background_green_border"
+        android:background="@drawable/edit_text_background_green_stroke"
+        android:drawableEnd="@drawable/ic_lock"
         android:hint="******"
         android:inputType="textPassword"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLabel" />
+        app:layout_constraintTop_toBottomOf="@id/textViewPasswordLabel" />
 
-    <Button
-        android:id="@+id/registerButton"
+    <!-- Botão de Cadastro -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signUpButton"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/button_background_purple"
-        android:text="Cadastra-se"
+        android:background="@drawable/button_background_green"
+        android:text="SignUp"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/loginTextView"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextPassword" />
 
+    <!-- Texto para fazer login -->
     <TextView
-        android:id="@+id/loginTextView"
+        android:id="@+id/textViewLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
-        android:text="Já está registrado? Faça login aqui."
+        android:layout_marginTop="16dp"
+        android:text="Já possui uma conta? Faça login aqui"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signUpButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
