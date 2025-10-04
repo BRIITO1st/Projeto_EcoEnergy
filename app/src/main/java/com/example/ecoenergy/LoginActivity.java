@@ -2,18 +2,17 @@ package com.example.ecoenergy;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText editTextEmail;
-    private EditText editTextPassword;
+    private EditText editTextEmail, editTextPassword;
     private Button loginButton;
     private TextView textViewSignUp;
 
@@ -22,13 +21,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Inicializa os componentes da tela
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         loginButton = findViewById(R.id.loginButton);
         textViewSignUp = findViewById(R.id.textViewSignUp);
 
-        // Ação do botão de login
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,18 +33,17 @@ public class LoginActivity extends AppCompatActivity {
                 String password = editTextPassword.getText().toString().trim();
 
                 if (validateInput(email, password)) {
-                    // --- ESPAÇO PARA LÓGICA DO BANCO DE DADOS ---
-                    // Aqui você chamará o método para autenticar o usuário
-                    Toast.makeText(LoginActivity.this, "Login bem-sucedido (simulação)", Toast.LENGTH_SHORT).show();
+                    // TODO: Inserir aqui a lógica de login com o banco de dados
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    finish(); // Fecha a tela de login para o usuário não voltar
                 }
             }
         });
 
-        // Ação do texto para ir para a tela de cadastro
         textViewSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Abre a tela de cadastro
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
@@ -55,19 +51,28 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean validateInput(String email, String password) {
+        // Verifica se o email está vazio
         if (email.isEmpty()) {
-            editTextEmail.setError("Email é obrigatório");
+            editTextEmail.setError("O campo de email não pode estar vazio.");
             editTextEmail.requestFocus();
             return false;
         }
 
+        // Verifica se o formato do email é válido (contém "@", etc.)
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            editTextEmail.setError("Por favor, insira um email válido.");
+            editTextEmail.requestFocus();
+            return false;
+        }
+
+        // Verifica se a senha está vazia
         if (password.isEmpty()) {
-            editTextPassword.setError("Senha é obrigatória");
+            editTextPassword.setError("O campo de senha não pode estar vazio.");
             editTextPassword.requestFocus();
             return false;
         }
 
-        // Adicionar mais validações se necessário (ex: formato de email)
+        // Se tudo estiver certo, retorna true
         return true;
     }
 }

@@ -51,13 +51,15 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Botão para continuar com Gmail -->
+
+    <!-- Texto para criar uma nova conta (Sign Up) -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/gmailButton"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_width="331dp"
+        android:layout_height="38dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="84dp"
         android:background="@drawable/button_background_orange_outline"
         android:drawableLeft="@drawable/ic_google_logo"
         android:paddingLeft="20dp"
@@ -68,9 +70,9 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/signUpTextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Texto para criar uma nova conta (Sign Up) -->
     <TextView
         android:id="@+id/signUpTextView"
         android:layout_width="wrap_content"
