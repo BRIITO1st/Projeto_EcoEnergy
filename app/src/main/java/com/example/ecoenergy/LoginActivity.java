@@ -72,7 +72,6 @@ public class LoginActivity extends AppCompatActivity {
             return false;
         }
 
-        // Se tudo estiver certo, retorna true
         return true;
     }
 }
