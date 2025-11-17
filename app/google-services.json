@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "665110482966",
+    "project_id": "ecoenergy-c95b1",
+    "storage_bucket": "ecoenergy-c95b1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665110482966:android:f784f7f7bab011163ce537",
+        "android_client_info": {
+          "package_name": "com.example.ecoenergy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_tirQ7pKIqmlLVoVXBeJ_OWmZKrJOP9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
